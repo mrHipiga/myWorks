@@ -1,37 +1,81 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/mrHipiga/myWorks/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mrHipiga/myWorks/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+import javax.swing.JOptionPane;
+public class HipigaMidterm {
+        
+    
+    public HipigaMidterm() {
+    }
+  
+    
+    public static void main(String[] args) {
+    	 String choice = "y" ;
+   		 double income,tuition = 0,discount=0,a=0;
+       int stud=0,stud1=0,stud2=0,stud3=0,stud4=0,stud5=0,stud6=0,nostud=0;
+      
+       while(choice.equals("y")){
+       income = Double.parseDouble(JOptionPane.showInputDialog("Enter MONTHLY FAMILY income"));
+       stud=stud+1;
+       	
+       			 if (income>20000){
+       			 JOptionPane.showMessageDialog(null,"Sorry\n The student is not qualified for discount grant");
+       			 nostud=nostud+1;
+      			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+       			 
+      			 else if ((income<=20000)&&(income>=18000)){
+      			 stud1=stud1+1;
+       			 tuition = Double.parseDouble(JOptionPane.showInputDialog("Enter Student Total Tuition Fee:"));
+       			 discount=tuition*0.15;
+       			 a=tuition-discount;
+       			 JOptionPane.showMessageDialog(null,"Discount Grant: 15%\n Tuition Fee:"+tuition+"\nDiscount:"+discount+"\nDiscounted Tuition Fee:"+a);
+       			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+      			  else if ((income<=17999)&&(income>=16000)){
+      			 stud2=stud2+1;
+       			 tuition = Double.parseDouble(JOptionPane.showInputDialog("Enter Student Total Tuition Fee:"));
+       			 discount=tuition*0.20;
+       			 a=tuition-discount;
+       			 JOptionPane.showMessageDialog(null,"Discount Grant: 20%\n Tuition Fee:"+tuition+"\nDiscount:"+discount+"\nDiscounted Tuition Fee:"+a);
+       			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+      			  else if ((income<=15999)&&(income>=14000)){
+      			 stud3=stud3+1;
+       			 tuition = Double.parseDouble(JOptionPane.showInputDialog("Enter Student Total Tuition Fee:"));
+       			 discount=tuition*0.25;
+       			 a=tuition-discount;
+       			 JOptionPane.showMessageDialog(null,"Discount Grant: 25%\n Tuition Fee:"+tuition+"\nDiscount:"+discount+"\nDiscounted Tuition Fee:"+a);
+       			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+      			  else if ((income<=13999)&&(income>=12000)){
+      			 stud4=stud4+1;
+       			 tuition = Double.parseDouble(JOptionPane.showInputDialog("Enter Student Total Tuition Fee:"));
+       			 discount=tuition*0.30;
+       			 a=tuition-discount;
+       			 JOptionPane.showMessageDialog(null,"Discount Grant: 30%\n Tuition Fee:"+tuition+"\nDiscount:"+discount+"\nDiscounted Tuition Fee:"+a);
+       			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+      			  else if ((income<=11900)&&(income>=10000)){
+      			 stud5=stud5+1;
+       			 tuition = Double.parseDouble(JOptionPane.showInputDialog("Enter Student Total Tuition Fee:"));
+       			 discount=tuition*0.35;
+       			 a=tuition-discount;
+       			 JOptionPane.showMessageDialog(null,"Discount Grant: 35%\n Tuition Fee:"+tuition+"\nDiscount:"+discount+"\nDiscounted Tuition Fee:"+a);
+       			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+      			  else if (income<10000){
+      			 stud6=stud6+1;
+       			 tuition = Double.parseDouble(JOptionPane.showInputDialog("Enter Student Total Tuition Fee:"));
+       			 discount=tuition*0.40;
+       			 a=tuition-discount;
+       			 JOptionPane.showMessageDialog(null,"Discount Grant: 40%\n Tuition Fee:"+tuition+"\nDiscount:"+discount+"\nDiscounted Tuition Fee:"+a);
+       			 choice = JOptionPane.showInputDialog("Enter another student?[y/n]");
+      			 }
+       			
+       			
+       			 
+       }
+      
+      JOptionPane.showMessageDialog(null,"Discount tuition summary:\n No.of students:"+stud+"\nNo. of students not discounted:"+nostud+"\nNo.of students with Discount:\n40%= "+stud6+"\n35%= "+stud5+"\n30%= "+stud4+"\n25%= "+stud3+"\n20%= "+stud2+"\n15%= "+stud1); 
+       
+       
+    }
+}
